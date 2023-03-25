@@ -1,0 +1,35 @@
+.wrap {
+	display: flex;
+}
+
+.content {
+	flex: 1;
+	padding: 15px 30px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+}
+
+// .btn-add {
+// 	background-color: rgb(235, 118, 35);
+// 	color: #fff;
+// }
+
+.icon1 {
+	margin-right: 10px;
+}
+
+#input {
+	background-color: rgb(243, 244, 246);
+}
+
+#input::placeholder {
+	color: #333;
+}
+
+.icon {
+	width: 24px;
+	height: 24px;
+}
