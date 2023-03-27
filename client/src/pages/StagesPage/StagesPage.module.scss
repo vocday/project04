@@ -12,10 +12,10 @@
 	justify-content: space-between;
 }
 
-// .btn-add {
-// 	background-color: rgb(235, 118, 35);
-// 	color: #fff;
-// }
+.name {
+	margin: 20px 0 5px 0;
+	line-height: 50px;
+}
 
 .icon1 {
 	margin-right: 10px;
@@ -32,4 +32,8 @@
 .icon {
 	width: 24px;
 	height: 24px;
+}
+
+.table {
+	background-color: #f3f4f6;
 }

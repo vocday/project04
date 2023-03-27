@@ -1,4 +1,4 @@
-import { Layout, Menu } from "antd";
+import { Badge, Layout, Menu } from "antd";
 import classNames from "classnames/bind";
 import React from "react";
 import detail from "../../resources/image/detail.png";
@@ -23,10 +23,12 @@ const SiderLayout = () => {
 		{
 			label: "Trò chuyện ",
 			icon: <img src={message} className={cx("image")} />,
+			children: ["sub1"],
 		},
 		{
 			label: "Thông báo",
 			icon: <img src={image2} className={cx("image")} />,
+			children: ["sub2"],
 		},
 		{
 			label: "Thông tin cá nhân",
@@ -43,13 +45,15 @@ const SiderLayout = () => {
 				</div>
 				<Menu
 					mode="inline"
-					defaultSelectedKeys={["1"]}
+					defaultSelectedKeys={["0"]}
 					style={{ height: "100%", borderRight: 0 }}
+					expandIcon={<Badge count={6} />}
 					items={items.map((item, index) => {
 						return {
 							key: index,
 							label: item.label,
 							icon: item.icon,
+							children: item?.children,
 						};
 					})}
 				/>

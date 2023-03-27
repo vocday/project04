@@ -1,0 +1,39 @@
+.wrap {
+	padding: 0;
+	line-height: 24px;
+}
+
+.title {
+	margin-left: 15px;
+}
+
+.desc {
+	padding: 0 10px 0 10px;
+}
+
+.table {
+	display: flex;
+	justify-content: space-between;
+	background-color: #fff;
+	border-top: 2px solid #bec3cc;
+
+	.task {
+		height: max-content;
+		min-height: 30vh;
+		background-color: #fff;
+	}
+
+	div h5 {
+		padding: 10px 71px;
+		background-color: #f3f4f6;
+	}
+}
+
+.one,
+.two {
+	border-left: 2px solid #bec3cc;
+}
+
+.two {
+	border-right: 2px solid #bec3cc;
+}
