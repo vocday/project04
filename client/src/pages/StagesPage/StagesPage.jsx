@@ -14,9 +14,9 @@ import {
 import classNames from "classnames/bind";
 import React from "react";
 
-import SiderLayout from "../../components/Sider/Sider";
-import question from "../../resources/image/question.png";
-import notification1 from "../../resources/image/notifications1.png";
+import SiderLayout from "../../layouts/Sider/Sider";
+import question from "../../assets/image/question.png";
+import notification1 from "../../assets/image/notifications1.png";
 
 import styles from "./StagesPage.module.scss";
 import TabItem from "../../components/TabItem/TabItem";
@@ -57,7 +57,7 @@ const StagesPage = () => {
 							placeholder="Tìm kiếm"
 							prefix={<FontAwesomeIcon icon={faMagnifyingGlass} />}
 							id={cx("input")}
-							style={{ backgroundColor: "#f3f4f6" }}
+							style={{ backgroundColor: "#fff" }}
 						/>
 					</div>
 					<Space size={10}>
@@ -81,29 +81,50 @@ const StagesPage = () => {
 						<Avatar>Đ</Avatar>
 					</Space>
 				</div>
-				<div>
-					<div className={cx("name")}>
-						<h2>Dự án 1</h2>
-						<Breadcrumb
-							items={[
-								{
-									title: "Trang chủ",
-								},
-								{
-									title: <a href="">Dự án 1</a>,
-								},
-								{
-									title: <a href="">Chi tiết dự án</a>,
-								},
-							]}
-						/>
-					</div>
+				<div className={cx("content--sub")}>
+					<Breadcrumb
+						className={cx("name")}
+						items={[
+							{
+								title: "Trang chủ",
+							},
+							{
+								title: <a href="">Dự án 1</a>,
+							},
+							{
+								title: <a href="">Chi tiết dự án</a>,
+							},
+						]}
+					/>
 
-					<div className={cx("table")}>
-						<Tabs items={tabsItem} tabBarGutter={"200px"} centered />
-					</div>
-					<div>
+					<Tabs
+						items={tabsItem}
+						tabBarGutter={"200px"}
+						className={cx("table")}
+						centered
+					/>
+
+					<div className={cx("comment")}>
 						<h4>Đánh giá : </h4>
+						<div className={cx("comment--sub")}>
+							<Space size={10}>
+								<Avatar>Đ</Avatar>
+								<p>Chúng tôi đang combat rồi !</p>
+							</Space>
+
+							<Space size={10}>
+								<Avatar>Đ</Avatar>
+								<p>Chúng tôi đang combat rồi !</p>
+							</Space>
+						</div>
+
+						<div className={cx("add--comment")}>
+							<Space>
+								<Avatar>Đ</Avatar>
+								<Input style={{ width: 700 }} />
+								<Button type="primary"> Đánh giá</Button>
+							</Space>
+						</div>
 					</div>
 				</div>
 			</div>

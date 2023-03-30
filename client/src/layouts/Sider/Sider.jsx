@@ -1,12 +1,12 @@
 import { Badge, Layout, Menu } from "antd";
 import classNames from "classnames/bind";
 import React from "react";
-import detail from "../../resources/image/detail.png";
-import image2 from "../../resources/image/image2.png";
-import logo from "../../resources/image/logo.png";
-import message from "../../resources/image/message.png";
-import project from "../../resources/image/project.png";
-import user from "../../resources/image/user.png";
+import detail from "../../assets/image/detail.png";
+import image2 from "../../assets/image/image2.png";
+import logo from "../../assets/image/logo.png";
+import message from "../../assets/image/message.png";
+import project from "../../assets/image/project.png";
+import user from "../../assets/image/user.png";
 import styles from "./Sider.module.scss";
 
 const cx = classNames.bind(styles);

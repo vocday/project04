@@ -4,17 +4,23 @@
 
 .content {
 	flex: 1;
-	padding: 15px 30px;
+}
+
+.content--sub {
+	padding: 0 30px;
 }
 
 .header {
 	display: flex;
 	justify-content: space-between;
+	background-color: rgb(74, 74, 255);
+	padding: 30px;
 }
 
 .name {
-	margin: 20px 0 5px 0;
-	line-height: 50px;
+	margin: 20px 0 10px 0;
+	font-size: 20px;
+	font-weight: 700;
 }
 
 .icon1 {
@@ -22,11 +28,11 @@
 }
 
 #input {
-	background-color: rgb(243, 244, 246);
+	background-color: #fff;
 }
 
 #input::placeholder {
-	color: #333;
+	color: rgb(140, 140, 140);
 }
 
 .icon {
@@ -36,4 +42,31 @@
 
 .table {
 	background-color: #f3f4f6;
+	font-size: 16px;
+	font-weight: 400;
+
+	h3 {
+		font-size: 18px;
+		font-family: 700;
+	}
+}
+
+.comment {
+	line-height: 50px;
+
+	h4 {
+		font-size: 20px;
+	}
+
+	.comment--sub,
+	.add--comment {
+		margin-bottom: 10px;
+		margin-left: 20px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.add--comment {
+		width: 100%;
+	}
 }

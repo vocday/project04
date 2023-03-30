@@ -9,6 +9,8 @@
 
 .desc {
 	padding: 0 10px 0 10px;
+	display: flex;
+	justify-content: space-between;
 }
 
 .table {
@@ -21,10 +23,31 @@
 		height: max-content;
 		min-height: 30vh;
 		background-color: #fff;
+
+		.task--item {
+			border: 2px solid rgb(190, 195, 204);
+			border-radius: 10px;
+			padding: 10px;
+			font-size: 14px;
+			position: relative;
+			margin: 5px;
+
+			span {
+				border: 1px solid gray;
+				border-radius: 15px;
+				padding: 1px 5px;
+			}
+
+			.open {
+				position: absolute;
+				right: 10px;
+				top: 10px;
+			}
+		}
 	}
 
 	div h5 {
-		padding: 10px 71px;
+		padding: 10px 55px;
 		background-color: #f3f4f6;
 	}
 }
@@ -36,4 +59,8 @@
 
 .two {
 	border-right: 2px solid #bec3cc;
+}
+
+.title--sub {
+	margin-left: 25px;
 }
