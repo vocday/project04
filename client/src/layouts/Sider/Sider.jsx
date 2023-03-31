@@ -1,4 +1,4 @@
-import { Badge, Layout, Menu } from "antd";
+import { Badge, Image, Layout, Menu, Space } from "antd";
 import classNames from "classnames/bind";
 import React from "react";
 import detail from "../../assets/image/detail.png";
@@ -38,11 +38,16 @@ const SiderLayout = () => {
 
 	return (
 		<>
-			<Sider width={200} style={{ background: "#fff" }} className={cx("sider")}>
-				<div className={cx("logo")}>
+			<Sider
+				width={200}
+				style={{ background: "#fff" }}
+				className={cx("sider")}
+				breakpoint={"md"}
+			>
+				<Space className={cx("logo")}>
 					<img src={logo} alt="logo" />
 					<h1>Tổng quan</h1>
-				</div>
+				</Space>
 				<Menu
 					mode="inline"
 					defaultSelectedKeys={["0"]}

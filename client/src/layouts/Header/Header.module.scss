@@ -1,0 +1,40 @@
+.wrapper {
+	display: flex;
+	background-color: rgb(66, 66, 240);
+	padding: 15px 20px;
+	justify-content: space-between;
+}
+
+.icon1 {
+	margin-right: 10px;
+}
+
+.input {
+	width: 300px;
+}
+
+.input::placeholder {
+	color: rgb(140, 140, 140);
+}
+
+.action {
+	align-items: center;
+}
+
+.icon {
+	cursor: pointer;
+}
+
+.btn--off {
+	display: none;
+}
+
+@media (max-width: 800px) {
+	.btn--off {
+		display: block;
+	}
+
+	.btn--on {
+		display: none;
+	}
+}

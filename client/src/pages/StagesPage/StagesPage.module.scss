@@ -10,34 +10,17 @@
 	padding: 0 30px;
 }
 
-.header {
-	display: flex;
-	justify-content: space-between;
-	background-color: rgb(74, 74, 255);
-	padding: 30px;
-}
+// .header {
+// 	display: flex;
+// 	justify-content: space-between;
+// 	background-color: rgb(74, 74, 255);
+// 	padding: 30px;
+// }
 
 .name {
 	margin: 20px 0 10px 0;
 	font-size: 20px;
 	font-weight: 700;
-}
-
-.icon1 {
-	margin-right: 10px;
-}
-
-#input {
-	background-color: #fff;
-}
-
-#input::placeholder {
-	color: rgb(140, 140, 140);
-}
-
-.icon {
-	width: 24px;
-	height: 24px;
 }
 
 .table {
@@ -64,9 +47,5 @@
 		margin-left: 20px;
 		display: flex;
 		flex-direction: column;
-	}
-
-	.add--comment {
-		width: 100%;
 	}
 }
