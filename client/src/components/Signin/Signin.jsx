@@ -66,7 +66,7 @@ export const Signin = () => {
             label="Mật Khẩu"
             name="password"
             rules={[
-              { required: true, message: "*Trường này không được để trống" },
+              { required: false, message: "*Trường này không được để trống" },
             ]}
           >
             <Input.Password placeholder="Nhập mật khẩu" />
