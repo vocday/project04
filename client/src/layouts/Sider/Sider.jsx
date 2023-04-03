@@ -1,4 +1,4 @@
-import { Badge, Image, Layout, Menu, Space } from "antd";
+import { Badge, Layout, Menu, Space } from "antd";
 import classNames from "classnames/bind";
 import React from "react";
 import detail from "../../assets/image/detail.png";
@@ -12,7 +12,7 @@ import styles from "./Sider.module.scss";
 const cx = classNames.bind(styles);
 
 const SiderLayout = () => {
-	const { Sider, Content } = Layout;
+	const { Sider } = Layout;
 
 	const items = [
 		{ label: "Dự án", icon: <img src={detail} className={cx("image")} /> },
@@ -21,14 +21,20 @@ const SiderLayout = () => {
 			icon: <img src={project} className={cx("image")} />,
 		},
 		{
-			label: "Trò chuyện ",
+			label: (
+				<Badge count={9} offset={[40, 10]}>
+					Trò chuyện
+				</Badge>
+			),
 			icon: <img src={message} className={cx("image")} />,
-			children: ["sub1"],
 		},
 		{
-			label: "Thông báo",
+			label: (
+				<Badge count={5} offset={[40, 10]}>
+					Thông báo
+				</Badge>
+			),
 			icon: <img src={image2} className={cx("image")} />,
-			children: ["sub2"],
 		},
 		{
 			label: "Thông tin cá nhân",
@@ -52,7 +58,6 @@ const SiderLayout = () => {
 					mode="inline"
 					defaultSelectedKeys={["0"]}
 					style={{ height: "100%", borderRight: 0 }}
-					expandIcon={<Badge count={6} />}
 					items={items.map((item, index) => {
 						return {
 							key: index,

@@ -1,51 +1,23 @@
-.wrap {
-	display: flex;
-}
-
 .content {
-	flex: 1;
+	padding: 25px;
 }
-
-.content--sub {
-	padding: 0 30px;
-}
-
-// .header {
-// 	display: flex;
-// 	justify-content: space-between;
-// 	background-color: rgb(74, 74, 255);
-// 	padding: 30px;
-// }
 
 .name {
-	margin: 20px 0 10px 0;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 700;
 }
 
-.table {
-	background-color: #f3f4f6;
-	font-size: 16px;
-	font-weight: 400;
-
-	h3 {
-		font-size: 18px;
-		font-family: 700;
-	}
-}
-
 .comment {
+	margin-top: 20px;
+	color: #333;
 	line-height: 50px;
 
 	h4 {
-		font-size: 20px;
+		font-size: 18px;
 	}
+}
 
-	.comment--sub,
-	.add--comment {
-		margin-bottom: 10px;
-		margin-left: 20px;
-		display: flex;
-		flex-direction: column;
-	}
+.comment--display {
+	display: flex;
+	flex-direction: column;
 }

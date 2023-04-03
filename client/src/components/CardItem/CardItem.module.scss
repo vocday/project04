@@ -1,0 +1,18 @@
+.card {
+	text-align: start;
+	position: relative;
+	font-size: 11px;
+	line-height: 20px;
+
+	span {
+		border: 1px solid gray;
+		border-radius: 20px;
+		padding: 0 5px;
+	}
+}
+
+.icon--opts {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}

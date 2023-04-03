@@ -1,46 +1,86 @@
-import { Divider, Layout } from "antd";
+import { Avatar, Breadcrumb, Button, Input, Space, Tabs } from "antd";
 
 import classNames from "classnames/bind";
 import React from "react";
 
-import SiderLayout from "../../layouts/Sider/Sider";
-
-import TabItem from "../../components/TabItem/TabItem";
-import HeaderLayout from "../../layouts/Header/Header";
-import styles from "./StagesPage.module.scss";
+import Kanban from "../../components/Kanban/Kanban";
 import MasterLayout from "../../layouts/MasterLayout/MasterLayout";
+import styles from "./StagesPage.module.scss";
 
 const cx = classNames.bind(styles);
 
 const StagesPage = () => {
-	const { Header, Content } = Layout;
-
 	const tabsItem = [
 		{
 			key: 1,
 			label: <h3>Chuẩn bị</h3>,
-			children: <TabItem />,
+			children: <Kanban />,
 		},
 		{
 			key: 2,
 			label: <h3>Đang thực hiện</h3>,
-			children: <TabItem />,
+			children: <Kanban />,
 		},
 		{
 			key: 3,
 			label: <h3>Tạm đình chỉ</h3>,
-			children: <TabItem />,
+			children: <Kanban />,
 		},
 		{
 			key: 4,
 			label: <h3>Hoàn thành</h3>,
-			children: <TabItem />,
+			children: <Kanban />,
 		},
 	];
 
 	return (
 		<MasterLayout>
-			<h2>hello guy!</h2>
+			<div className={cx("content")}>
+				<Breadcrumb
+					className={cx("name")}
+					items={[
+						{
+							title: "Trang chủ",
+						},
+						{
+							title: <a href="">Dự án 1</a>,
+						},
+						{
+							title: <a href="">Chi tiết trạng thái</a>,
+						},
+					]}
+				/>
+
+				<Tabs
+					items={tabsItem}
+					tabBarGutter={"200px"}
+					className={cx("table")}
+					centered
+				/>
+
+				<div className={cx("comment")}>
+					<h4>Đánh giá : </h4>
+					<div className={cx("comment--display")}>
+						<Space size={10}>
+							<Avatar>Đ</Avatar>
+							<p>Chúng tôi đang combat rồi !</p>
+						</Space>
+
+						<Space size={10}>
+							<Avatar>Đ</Avatar>
+							<p>Chúng tôi đang combat rồi !</p>
+						</Space>
+					</div>
+
+					<div className={cx("comment--action")}>
+						<Space>
+							<Avatar>Đ</Avatar>
+							<Input style={{ width: 700 }} />
+							<Button type="primary"> Đánh giá</Button>
+						</Space>
+					</div>
+				</div>
+			</div>
 		</MasterLayout>
 	);
 };
