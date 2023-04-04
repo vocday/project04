@@ -57,7 +57,7 @@ const SiderLayout = () => {
 				<Menu
 					mode="inline"
 					defaultSelectedKeys={["0"]}
-					style={{ height: "100%", borderRight: 0 }}
+					// style={{ height: "100%", borderRight: 0 }}
 					items={items.map((item, index) => {
 						return {
 							key: index,

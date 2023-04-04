@@ -1,24 +1,45 @@
 .kanban {
 	display: flex;
 	align-items: flex-start;
-	text-align: center;
+	text-align: left;
+
 	flex-wrap: wrap;
 	justify-content: space-between;
 
 	&__section {
 		width: 210px;
-
-		background-color: #cecbcb;
-		padding: 10px;
 		border-radius: 10px;
+		background-color: #fcf7f7;
+		padding: 10px;
 
 		& ~ & {
 			margin-left: 10px;
 		}
 
 		&__title {
-			font-size: 14px;
-			font-weight: 700;
+			font-size: 16px;
+			font-weight: 600;
+
+			p {
+				position: relative;
+			}
+
+			.icon {
+				position: absolute;
+				bottom: 10px;
+				right: 5px;
+				cursor: pointer;
+				padding: 2px;
+				width: 15px;
+				height: 15px;
+				color: #fff;
+				border-radius: 50%;
+				background-color: #969494;
+
+				:hover {
+					background-color: #e6e4e4;
+				}
+			}
 		}
 
 		&__content {
@@ -33,8 +54,13 @@
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	letter-spacing: 0.5px;
+	font-weight: 400;
+	font-size: 16px;
 }
 
 .stages {
 	line-height: 40px;
+	font-weight: 400;
+	font-size: 16px;
 }

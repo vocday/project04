@@ -81,7 +81,7 @@ const HeaderLayout = () => {
 					</Tooltip>
 				</Badge>
 
-				<Avatar className={cx("icon")}>Đ</Avatar>
+				<Avatar>Đ</Avatar>
 			</Space>
 		</Header>
 	);

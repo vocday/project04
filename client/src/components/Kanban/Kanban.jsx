@@ -7,10 +7,12 @@ import { faClipboard } from "@fortawesome/free-regular-svg-icons";
 import {
 	faCalendarDays,
 	faFileSignature,
+	faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "../CardItem/CardItem";
 import styles from "./Kanban.module.scss";
+import { Tooltip } from "antd";
 
 const cx = classNames.bind(styles);
 
@@ -18,7 +20,14 @@ const Kanban = () => {
 	const mockData = [
 		{
 			id: uuidv4(),
-			title: "Đang chuẩn bị",
+			title: (
+				<p>
+					Đang chuẩn bị{" "}
+					<Tooltip title="Thêm thẻ">
+						<FontAwesomeIcon icon={faPlus} className={cx("icon")} />
+					</Tooltip>
+				</p>
+			),
 			tasks: [
 				{
 					id: uuidv4(),
@@ -36,7 +45,14 @@ const Kanban = () => {
 		},
 		{
 			id: uuidv4(),
-			title: " Đang thực hiện",
+			title: (
+				<p>
+					Đang thực hiện
+					<Tooltip title="Thêm thẻ">
+						<FontAwesomeIcon icon={faPlus} className={cx("icon")} />
+					</Tooltip>
+				</p>
+			),
 			tasks: [
 				{
 					id: uuidv4(),
@@ -50,7 +66,14 @@ const Kanban = () => {
 		},
 		{
 			id: uuidv4(),
-			title: " Đang chờ đánh giá",
+			title: (
+				<p>
+					Đang chờ đánh giá{" "}
+					<Tooltip title="Thêm thẻ">
+						<FontAwesomeIcon icon={faPlus} className={cx("icon")} />
+					</Tooltip>
+				</p>
+			),
 			tasks: [
 				{
 					id: uuidv4(),
@@ -60,7 +83,14 @@ const Kanban = () => {
 		},
 		{
 			id: uuidv4(),
-			title: " Hoàn thành",
+			title: (
+				<p>
+					Hoàn thành{" "}
+					<Tooltip title="Thêm thẻ">
+						<FontAwesomeIcon icon={faPlus} className={cx("icon")} />
+					</Tooltip>
+				</p>
+			),
 			tasks: [
 				{
 					id: uuidv4(),
@@ -70,7 +100,14 @@ const Kanban = () => {
 		},
 		{
 			id: uuidv4(),
-			title: " Hủy bỏ",
+			title: (
+				<p>
+					Hủy bỏ{" "}
+					<Tooltip title="Thêm thẻ">
+						<FontAwesomeIcon icon={faPlus} className={cx("icon")} />
+					</Tooltip>
+				</p>
+			),
 			tasks: [
 				{
 					id: uuidv4(),
@@ -110,24 +147,26 @@ const Kanban = () => {
 	return (
 		<>
 			<div className={cx("desc")}>
-				<h4>
-					<FontAwesomeIcon icon={faFileSignature} /> Tên giai đoạn :{" "}
-				</h4>
-				<h4>
-					<FontAwesomeIcon icon={faCalendarDays} /> Ngày bắt đầu:{" "}
-				</h4>
-				<h4>
-					<FontAwesomeIcon icon={faCalendarDays} /> Ngày kết thúc dự kiến:{" "}
-				</h4>
-				<h4>
-					<FontAwesomeIcon icon={faCalendarDays} /> Ngày kết thúc thực tế :{" "}
-				</h4>
+				<p>
+					<FontAwesomeIcon icon={faFileSignature} /> Tên giai đoạn : Lấy hàng{" "}
+				</p>
+				<p>
+					<FontAwesomeIcon icon={faCalendarDays} /> Ngày bắt đầu : 22/02/2020{" "}
+				</p>
+				<p>
+					<FontAwesomeIcon icon={faCalendarDays} /> Ngày kết thúc dự kiến :
+					22/02/2026{" "}
+				</p>
+				<p>
+					<FontAwesomeIcon icon={faCalendarDays} /> Ngày kết thúc thực tế :
+					22/02/2029{" "}
+				</p>
 			</div>
 			<div className={cx("stages")}>
-				<h4>
+				<p>
 					{" "}
 					<FontAwesomeIcon icon={faClipboard} /> Các công việc :
-				</h4>
+				</p>
 				<DragDropContext onDragEnd={onDragEnd}>
 					<div className={cx("kanban")}>
 						{data.map((section) => (

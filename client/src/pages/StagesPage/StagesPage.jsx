@@ -52,10 +52,17 @@ const StagesPage = () => {
 				/>
 
 				<Tabs
+					type="card"
 					items={tabsItem}
-					tabBarGutter={"200px"}
+					tabBarGutter={"100px"}
 					className={cx("table")}
+					tabBarStyle={{
+						backgroundColor: "#026AA7",
+						color: "#fff",
+						padding: "5px",
+					}}
 					centered
+					hideAdd
 				/>
 
 				<div className={cx("comment")}>
@@ -67,7 +74,7 @@ const StagesPage = () => {
 						</Space>
 
 						<Space size={10}>
-							<Avatar>Đ</Avatar>
+							<Avatar>B</Avatar>
 							<p>Chúng tôi đang combat rồi !</p>
 						</Space>
 					</div>

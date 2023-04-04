@@ -1,27 +1,42 @@
-import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Card } from "antd";
+import { Avatar, Badge, Card, Progress, Space, Tooltip } from "antd";
 import classNames from "classnames/bind";
 import styles from "./CardItem.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 
 const cx = classNames.bind(styles);
 
 const CardItem = (props) => {
 	return (
 		<Card className={cx("card")}>
-			<FontAwesomeIcon icon={faEllipsisVertical} className={cx("icon--opts")} />
-			<h4>Chuẩn bị hàng</h4>
-			<h4>
-				Loại : <span>Nhiệm vụ</span>{" "}
-			</h4>
-			<h4>
-				Độ ưu tiên : <span>Cao nhất</span>
-			</h4>
-			<h4>Ngày bắt đầu : 26/06/1997 </h4>
-			<h4>Ngày kết thúc : 26/06/2025</h4>
-			<h4>
-				Người thực hiện : <span>datdev</span>
-			</h4>
+			<Space size={0}>
+				<Tooltip title="Màu sắc : xanh lá cây - Loại : Nhiệm vụ">
+					<Progress
+						percent={100}
+						showInfo={false}
+						strokeColor={"green"}
+						className={cx("icon--title")}
+					/>
+				</Tooltip>
+				<Tooltip title="Màu sắc : đỏ - Độ ưu tiên : Cao nhất">
+					<Progress
+						percent={100}
+						showInfo={false}
+						strokeColor={"red"}
+						className={cx("icon--title")}
+					/>
+				</Tooltip>
+			</Space>
+			<Tooltip title="Chi tiết công việc">
+				<FontAwesomeIcon icon={faPen} className={cx("icon--opts")} />
+			</Tooltip>
+
+			<p>Chuẩn bị hàng nhập kho số liệu cần thiết</p>
+			<Avatar.Group maxCount={2} size="small" className={cx("team")}>
+				<Avatar>ADMIN</Avatar>
+				<Avatar>USER</Avatar>
+				<Avatar>USER</Avatar>
+			</Avatar.Group>
 		</Card>
 	);
 };
