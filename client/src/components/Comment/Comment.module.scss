@@ -1,0 +1,15 @@
+.comment {
+	color: #333;
+	line-height: 50px;
+	background-color: #fff;
+	padding: 0 25px 20px 25px;
+
+	h4 {
+		font-size: 18px;
+	}
+}
+
+.comment--display {
+	display: flex;
+	flex-direction: column;
+}

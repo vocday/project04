@@ -20,8 +20,8 @@
 			font-size: 16px;
 			font-weight: 600;
 
+			position: relative;
 			p {
-				position: relative;
 			}
 
 			.icon {
@@ -63,4 +63,8 @@
 	line-height: 40px;
 	font-weight: 400;
 	font-size: 16px;
+}
+
+.kanban {
+	margin-top: 20px;
 }

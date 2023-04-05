@@ -12,7 +12,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "../CardItem/CardItem";
 import styles from "./Kanban.module.scss";
-import { Tooltip } from "antd";
+import { Divider, Tooltip } from "antd";
 
 const cx = classNames.bind(styles);
 
@@ -116,6 +116,7 @@ const Kanban = () => {
 			],
 		},
 	];
+
 	const [data, setData] = useState(mockData);
 
 	const onDragEnd = (result) => {
@@ -148,9 +149,6 @@ const Kanban = () => {
 		<>
 			<div className={cx("desc")}>
 				<p>
-					<FontAwesomeIcon icon={faFileSignature} /> Tên giai đoạn : Lấy hàng{" "}
-				</p>
-				<p>
 					<FontAwesomeIcon icon={faCalendarDays} /> Ngày bắt đầu : 22/02/2020{" "}
 				</p>
 				<p>
@@ -165,8 +163,9 @@ const Kanban = () => {
 			<div className={cx("stages")}>
 				<p>
 					{" "}
-					<FontAwesomeIcon icon={faClipboard} /> Các công việc :
+					<FontAwesomeIcon icon={faClipboard} /> Danh sách công việc :
 				</p>
+				<Divider />
 				<DragDropContext onDragEnd={onDragEnd}>
 					<div className={cx("kanban")}>
 						{data.map((section) => (
