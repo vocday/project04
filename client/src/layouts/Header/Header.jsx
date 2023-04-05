@@ -4,21 +4,19 @@ import {
 	Avatar,
 	Badge,
 	Button,
-	Col,
 	ConfigProvider,
 	Image,
 	Input,
 	Layout,
-	Row,
 	Space,
 	Tooltip,
 } from "antd";
 
 import classNames from "classnames/bind";
 
-import styles from "./Header.module.scss";
-import question from "../../assets/image/question.png";
 import notifications1 from "../../assets/image/notifications1.png";
+import question from "../../assets/image/question.png";
+import styles from "./Header.module.scss";
 
 const cx = classNames.bind(styles);
 
@@ -83,7 +81,7 @@ const HeaderLayout = () => {
 					</Tooltip>
 				</Badge>
 
-				<Avatar className={cx("icon")}>Đ</Avatar>
+				<Avatar>Đ</Avatar>
 			</Space>
 		</Header>
 	);
