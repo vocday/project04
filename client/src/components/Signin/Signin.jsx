@@ -37,7 +37,7 @@ export const Signin = () => {
           // }}
           style={{
             maxWidth: 600,
-            width: 400,
+            // width: 400,
           }}
         >
           <Form.Item style={{ fontWeight: "bold" }} label="Tên Đăng Nhập">

@@ -153,6 +153,7 @@ export const HomePage = () => {
       tags: ["cool", "teacher"],
     },
   ];
+
   return (
     <MasterLayout>
       {data.length > 0 ? <ProjectList data={data} /> : <Emptydata />}
