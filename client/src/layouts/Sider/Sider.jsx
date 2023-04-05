@@ -73,7 +73,6 @@ const SiderLayout = () => {
 				<Menu
 					mode="inline"
 					defaultSelectedKeys={["0"]}
-					style={{ height: "100%", borderRight: 0 }}
 					expandIcon={<Badge count={6} />}
 					items={items.map((item, index) => {
 						return {
