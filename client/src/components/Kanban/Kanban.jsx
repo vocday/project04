@@ -163,7 +163,7 @@ const Kanban = () => {
 			<div className={cx("stages")}>
 				<p>
 					{" "}
-					<FontAwesomeIcon icon={faClipboard} /> Danh sách công việc :
+					<FontAwesomeIcon icon={faClipboard} /> Danh sách công việc
 				</p>
 				<Divider />
 				<DragDropContext onDragEnd={onDragEnd}>

@@ -63,7 +63,7 @@ const StagesPage = () => {
 							icon={<FontAwesomeIcon icon={faPlus} className={cx("icon1")} />}
 							className={cx("btn--on")}
 						>
-							Thêm stages mới
+							Thêm trạng thái mới
 						</Button>
 					</ConfigProvider>
 				</div>
