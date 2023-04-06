@@ -9,6 +9,7 @@ import Comment from "../../components/Comment/Comment";
 import Kanban from "../../components/Kanban/Kanban";
 import MasterLayout from "../../layouts/MasterLayout/MasterLayout";
 import styles from "./StagesPage.module.scss";
+import { Projectdetails } from "../../components/Projectdetails/Projectdetails";
 
 const cx = classNames.bind(styles);
 
@@ -104,6 +105,7 @@ const StagesPage = () => {
               />
             }
           />
+          <Route path="/" element={<Projectdetails />} />
         </Routes>
       </div>
 
