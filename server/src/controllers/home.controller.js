@@ -1,19 +1,15 @@
-const course = require("../db/mongo/models/course");
+const db = require("../db/mysql/models/user");
+const userService = require("../services/user.service");
+const { renewToken } = require("../utils/auth.utils");
 
-const home = (req, res) => {
-  course.find({}, async function (err, courses) {
+const homeController = {
+  async home(req, res) {
     try {
-      await res.json(courses);
-    } catch (err) {
-      res.status(500).json({ err: "data loading error" });
+      res.status(200).json({ message: "WELCOME TO GROUP 3 !!!" });
+    } catch (error) {
+      res.status(500).json(error);
     }
-    // if (!err) {
-    //     res.json(courses);
-    //     return;
-    // }
-    // res.status(500).json({ error: 'data loading error' });
-  });
-}
+  },
+};
 
-
-module.exports = { home }
+module.exports = homeController;

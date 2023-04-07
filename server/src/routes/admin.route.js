@@ -3,7 +3,6 @@ const adminRouter = express.Router();
 
 const authController = require("../controllers/auth.controller");
 const homeController = require("../controllers/home.controller");
-const assetController = require("../controllers/asset.controller");
 
 const authMiddleware = require("../middleware/auth.mid");
 
@@ -21,8 +20,6 @@ function adminRoute(app) {
   //search
 
   //asset
-  adminRouter.get("/manage-assets/create", assetController.buyOrder.list);
-  adminRouter.post("/manage-assets/update", assetController.buyOrder.create);
 
   return app.use("/", adminRouter);
 }
