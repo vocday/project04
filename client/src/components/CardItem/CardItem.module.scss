@@ -8,7 +8,7 @@
 	p {
 		font-size: 16px;
 		font-weight: 100;
-		margin-bottom: 10px;
+		margin: 15px 0 20px 0;
 	}
 
 	span {
@@ -27,11 +27,12 @@
 
 .icon--opts {
 	position: absolute;
-	top: 25px;
-	right: 15px;
+	left: 15px;
+	bottom: 5px;
 	display: none;
-	background-color: rgb(228, 224, 224);
-	padding: 5px;
+
+	font-size: 20px;
+	cursor: pointer;
 }
 
 .badge {
@@ -39,7 +40,10 @@
 }
 
 .icon--title {
-	width: 40px;
+	width: 70px;
+	position: absolute;
+	top: 15px;
+	left: 15px;
 }
 
 .team {
@@ -50,4 +54,10 @@
 
 .icon--avatar {
 	background-color: green;
+}
+
+.icon--rate {
+	position: absolute;
+	top: 15px;
+	right: 15px;
 }
