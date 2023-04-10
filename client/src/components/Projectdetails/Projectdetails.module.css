@@ -1,0 +1,41 @@
+.timelineComponent {
+  margin-top: 6%;
+  margin-left: 30px !important;
+}
+.timelineComponent li {
+  padding-left: 20px;
+  margin-top: 10%;
+  font-size: 30px !important;
+  margin-bottom: 50px !important;
+}
+/* .timelineComponent > li span {
+  font-size: 60px !important;
+} */
+/* .iconTimeline {
+    margin-top: 21px !important;
+} */
+.nameProject {
+  margin-left: 20px !important;
+  font-weight: bold;
+}
+
+.descProject {
+  font-weight: lighter;
+  font-size: 30px !important;
+  display: inline;
+}
+.descProject li span {
+  font-weight: lighter;
+  font-size: 30px !important;
+  display: inline;
+  font-size: 30px !important;
+}
+.stepsComponent {
+  display: inline;
+}
+.buttonGoStages {
+  margin-left: 70%;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+}
