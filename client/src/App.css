@@ -61,3 +61,7 @@ body {
 .CardItem_card__URk0w span {
 	border: none !important;
 }
+
+.ant-modal .ant-modal-footer {
+	text-align: center !important;
+}

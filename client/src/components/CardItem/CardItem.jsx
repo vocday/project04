@@ -41,7 +41,7 @@ const CardItem = (props) => {
 
 			<p>Chuẩn bị hàng nhập kho số liệu cần thiết</p>
 			<Avatar.Group maxCount={2} size="small" className={cx("team")}>
-				<Avatar>ADMIN</Avatar>
+				<Avatar>D</Avatar>
 				<Avatar>USER</Avatar>
 				<Avatar>USER</Avatar>
 			</Avatar.Group>

@@ -7,7 +7,7 @@ import { PlusCircleTwoTone } from "@ant-design/icons";
 import { faClipboard } from "@fortawesome/free-regular-svg-icons";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Divider, Modal, Tooltip } from "antd";
+import { Button, ConfigProvider, Divider, Modal, Tooltip } from "antd";
 import Card from "../CardItem/CardItem";
 import styles from "./Kanban.module.scss";
 import FormCard from "../FormCard/FormCard";
@@ -47,7 +47,7 @@ const Kanban = () => {
 				<p>
 					Đang thực hiện
 					<Tooltip title="Thêm thẻ">
-						<PlusCircleTwoTone className={cx("icon")} />
+						<PlusCircleTwoTone className={cx("icon")} onClick={hadleOpenCard} />
 					</Tooltip>
 				</p>
 			),
@@ -68,7 +68,7 @@ const Kanban = () => {
 				<p>
 					Đang chờ đánh giá{" "}
 					<Tooltip title="Thêm thẻ">
-						<PlusCircleTwoTone className={cx("icon")} />
+						<PlusCircleTwoTone className={cx("icon")} onClick={hadleOpenCard} />
 					</Tooltip>
 				</p>
 			),
@@ -85,7 +85,7 @@ const Kanban = () => {
 				<p>
 					Hoàn thành{" "}
 					<Tooltip title="Thêm thẻ">
-						<PlusCircleTwoTone className={cx("icon")} />
+						<PlusCircleTwoTone className={cx("icon")} onClick={hadleOpenCard} />
 					</Tooltip>
 				</p>
 			),
@@ -102,7 +102,7 @@ const Kanban = () => {
 				<p>
 					Hủy bỏ{" "}
 					<Tooltip title="Thêm thẻ">
-						<PlusCircleTwoTone className={cx("icon")} />
+						<PlusCircleTwoTone className={cx("icon")} onClick={hadleOpenCard} />
 					</Tooltip>
 				</p>
 			),
@@ -221,7 +221,13 @@ const Kanban = () => {
 				<Modal
 					open={openModalCard}
 					onCancel={onCancel}
-					footer={[<Button>Tạo mới</Button>]}
+					footer={[
+						<ConfigProvider
+							theme={{ token: { colorPrimary: "rgb(235, 118, 35)" } }}
+						>
+							<Button type="primary">Tạo mới thẻ</Button>
+						</ConfigProvider>,
+					]}
 					centered
 				>
 					<FormCard />
