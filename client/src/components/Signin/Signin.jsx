@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Signin.module.css";
 import {
   Button,
@@ -11,13 +11,26 @@ import {
   message,
 } from "antd";
 import { useNavigate } from "react-router";
+import axios, { Axios } from "axios";
 const { Option } = Select;
 const { Title, Link } = Typography;
-const onFinish = (values) => {
-  console.log("Received values of form: ", values);
-};
 
 export const Signin = () => {
+  const handleSubmit = (values) => {
+    // navigate("/");
+    console.log("Received values of form: ", values);
+    const formData = {
+      email: values.email,
+      password: values.password,
+    };
+    axios.post("http://localhost:4000/login", formData).then((response) => {
+      console.log(response.status, response.data);
+      if (response.status == 200 && response.data.userId) {
+        navigate("/");
+      }
+    });
+  };
+
   const navigate = useNavigate();
   return (
     <div className={styles.signinCtn}>
@@ -28,21 +41,15 @@ export const Signin = () => {
         <Form
           name="complex-form"
           layout="vertical"
-          onFinish={onFinish}
-          // labelCol={{
-          //   span: 8,
-          // }}
-          // wrapperCol={{
-          //   span: 16,
-          // }}
+          onFinish={handleSubmit}
           style={{
             maxWidth: 600,
-            // width: 400,
+            width: 400,
           }}
         >
-          <Form.Item style={{ fontWeight: "bold" }} label="Tên Đăng Nhập">
+          <Form.Item style={{ fontWeight: "bold" }} label="Email">
             <Form.Item
-              name="username"
+              name="email"
               noStyle
               rules={[
                 {
@@ -55,7 +62,7 @@ export const Signin = () => {
                 style={{
                   width: "100%",
                 }}
-                placeholder="Điền tên đăng nhập của bạn"
+                placeholder="Điền email của bạn"
               />
               {/* <Input /> */}
             </Form.Item>
@@ -75,7 +82,7 @@ export const Signin = () => {
           <Form.Item label=" " colon={false}>
             <Button
               style={{ width: "100%" }}
-              onClick={() => navigate("/")}
+              // onClick={() => navigate("/")}
               type="primary"
               htmlType="submit"
             >

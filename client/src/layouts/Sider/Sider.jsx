@@ -30,18 +30,18 @@ const SiderLayout = () => {
       ),
       icon: <img src={detail} className={cx("image")} />,
     },
-    {
-      label: (
-        <p
-          onClick={() => {
-            navigate("/projectdetails");
-          }}
-        >
-          Chi Tiết Dự Án
-        </p>
-      ),
-      icon: <img src={project} className={cx("image")} />,
-    },
+    // {
+    //   label: (
+    //     <p
+    //       onClick={() => {
+    //         navigate("/projectdetails");
+    //       }}
+    //     >
+    //       Chi Tiết Dự Án
+    //     </p>
+    //   ),
+    //   icon: <img src={project} className={cx("image")} />,
+    // },
     {
       label: "Trò chuyện ",
       icon: <img src={message} className={cx("image")} />,

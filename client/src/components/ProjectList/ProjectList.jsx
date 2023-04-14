@@ -1,34 +1,45 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Space, Table, Tag, Typography } from "antd";
-const { Title } = Typography;
-const columns = [
-  {
-    title: "Tên dự án",
-    dataIndex: "name",
-    key: "name",
-    render: (text) => <a>{text}</a>,
-  },
-  {
-    title: "Ngày bắt đầu",
-    dataIndex: "start",
-    key: "start",
-    render: (text) => <p>20/3/2023</p>,
-  },
-  {
-    title: "Hạn hoàn thành",
-    dataIndex: "end",
-    key: "end",
-    render: (text) => <p>25/5/2023</p>,
-  },
-  {
-    title: "Trạng thái",
-    key: "tags",
-    dataIndex: "tags",
-    render: (_, { tags }) => <>Đang thực hiện</>,
-  },
-];
 
 export const ProjectList = ({ data }) => {
+  const navigate = useNavigate();
+  const { Title } = Typography;
+  const columns = [
+    {
+      title: "Tên dự án",
+      dataIndex: "name",
+      key: "name",
+      render: (text) => (
+        <a
+          onClick={() => {
+            navigate("/projectdetails");
+          }}
+        >
+          {text}
+        </a>
+      ),
+    },
+    {
+      title: "Ngày bắt đầu",
+      dataIndex: "start",
+      key: "start",
+      render: (text) => <p>20/3/2023</p>,
+    },
+    {
+      title: "Hạn hoàn thành",
+      dataIndex: "end",
+      key: "end",
+      render: (text) => <p>25/5/2023</p>,
+    },
+    {
+      title: "Trạng thái",
+      key: "tags",
+      dataIndex: "tags",
+      render: (_, { tags }) => <>Đang thực hiện</>,
+    },
+  ];
+
   return (
     <div>
       <Title style={{ marginTop: "5%" }}>

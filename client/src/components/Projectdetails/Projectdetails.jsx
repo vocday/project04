@@ -21,8 +21,7 @@ export const Projectdetails = () => {
   const [descProjectvalue, setDescProjectvalue] = useState(
     "Ứng dụng web quản lý công việc dự án được tạo ra nhằm giúp cho đội dự án phần mềm có thể dễ dàng và thuận tiên trong việc quản lý, phân công công việc và giao tiếp giữa các thành viên trong đội dự án."
   );
-  const [statusProjectvalue, setStatusProjectvalue] =
-    useState("Đang thực hiện");
+
   const onChangeSteps = (value) => {
     console.log("onChange:", value);
     setCurrent(value);
@@ -30,6 +29,32 @@ export const Projectdetails = () => {
   const description = "This is a description.";
   return (
     <>
+      <div>
+        <Steps
+          className={styles.stepsComponent}
+          current={current}
+          size="default"
+          onChange={onChangeSteps}
+          items={[
+            {
+              title: "Chuẩn bị",
+              description,
+            },
+            {
+              title: "Đang thực hiện",
+              description,
+            },
+            {
+              title: "Tạm Đình Chỉ",
+              description,
+            },
+            {
+              title: "Hoàn Thành",
+              description,
+            },
+          ]}
+        />
+      </div>
       <Timeline
         className={styles.timelineComponent}
         items={[
@@ -101,38 +126,7 @@ export const Projectdetails = () => {
               </div>
             ),
           },
-          {
-            dot: <CheckCircleOutlined className={styles.iconTimeline} />,
-            color: "black",
-            children: (
-              <div className={styles.nameProject}>
-                Trạng thái :
-                <Steps
-                  className={styles.stepsComponent}
-                  current={current}
-                  onChange={onChangeSteps}
-                  items={[
-                    {
-                      title: "Chuẩn bị",
-                      description,
-                    },
-                    {
-                      title: "Đang thực hiện",
-                      description,
-                    },
-                    {
-                      title: "Tạm Đình Chỉ",
-                      description,
-                    },
-                    {
-                      title: "Hoàn Thành",
-                      description,
-                    },
-                  ]}
-                />
-              </div>
-            ),
-          },
+
           {
             dot: <TeamOutlined className={styles.iconTimeline} />,
             color: "black",

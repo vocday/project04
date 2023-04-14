@@ -31,7 +31,9 @@
   font-size: 30px !important;
 }
 .stepsComponent {
-  display: inline;
+  display: inline-block;
+  margin-top: 5%;
+  max-width: 100%;
 }
 .buttonGoStages {
   margin-left: 70%;
