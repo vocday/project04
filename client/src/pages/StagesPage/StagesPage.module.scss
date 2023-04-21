@@ -1,28 +1,32 @@
 .content {
-	padding: 25px;
-	background-color: #fff;
-	height: max-content;
-	min-height: 100vh;
+  padding: 25px;
+  background-color: #fff;
+  height: max-content;
+  min-height: 100vh;
 }
 
 .name {
-	font-size: 18px;
-	font-weight: 700;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .table {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 .test {
-	background-color: #333;
+  background-color: #333;
 }
 
 .breadcrum {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .icon1 {
-	margin-right: 10px;
+  margin-right: 10px;
+}
+.hover:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }

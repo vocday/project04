@@ -46,31 +46,40 @@ const StagesPage = () => {
             className={cx("name")}
             items={[
               {
-                title: "Trang chủ",
+                title: (
+                  <span
+                    className={cx("hover")}
+                    onClick={() => {
+                      navigate("/");
+                    }}
+                  >
+                    Trang chủ
+                  </span>
+                ),
               },
               {
                 title: (
-                  <a
-                    href=""
+                  <span
+                    className={cx("hover")}
                     onClick={() => {
                       navigate("/projectdetails");
                     }}
                   >
                     Dự án 1
-                  </a>
+                  </span>
                 ),
               },
               namePath !== "/projectdetails"
                 ? {
                     title: (
-                      <a
-                        href=""
+                      <span
+                        className={cx("hover")}
                         onClick={() => {
                           navigate("/projectdetails/detailedstage");
                         }}
                       >
                         Chi tiết trạng thái
-                      </a>
+                      </span>
                     ),
                   }
                 : " ",

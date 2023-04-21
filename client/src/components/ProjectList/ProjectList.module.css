@@ -1,3 +1,7 @@
-.demoloadmorelist {
-  min-height: 350px;
+.titleLabel {
+  color: #4d554d !important;
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 20px !important;
+  margin-bottom: 15px !important;
 }

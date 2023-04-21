@@ -30,14 +30,100 @@
   display: inline;
   font-size: 30px !important;
 }
-.stepsComponent {
-  display: inline-block;
-  margin-top: 5%;
-  max-width: 100%;
-}
+
 .buttonGoStages {
-  margin-left: 70%;
+  margin-top: 10%;
+  /* margin-left: 70%; */
+  float: right;
   height: 40px;
   text-align: center;
   font-weight: bold;
+}
+
+.projectdetailContainer {
+  display: flex;
+}
+.projectdetailInfoContainer {
+  width: 70%;
+}
+.projectdetailStepContainer {
+  width: 30%;
+  margin-top: 50px;
+  margin-left: 30px;
+  position: relative;
+}
+.projectdetailSteps {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+}
+
+.projectdetailGeneralInfo {
+  padding: 15px 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0.5px #a49999;
+}
+.projectdetailLabel {
+  display: flex;
+  line-height: 40px;
+  font-size: 20px;
+}
+.projectdetailLabel > b {
+  white-space: nowrap;
+  opacity: 0.6;
+}
+
+.projectdetailInput {
+  border: none;
+}
+.projectdetailInput:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.projectdetailTitle {
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+.projectdetailDesc {
+  padding-left: 18px;
+}
+.AvatarGroup {
+  /* display: flex; */
+  vertical-align: bottom;
+  padding: 5px 0;
+}
+.showMemberList {
+  background-color: green;
+  vertical-align: sub;
+  cursor: pointer;
+}
+.showMemberList:hover {
+  opacity: 0.8;
+}
+.projectdetailMargin {
+  margin: 8px 0 0 20px;
+}
+.buttonFinishProject {
+  margin-top: 10%;
+  background-color: #30ab3a !important;
+  border-color: #30ab3a !important;
+  color: #fff !important;
+  margin-left: 1%;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+.showMember {
+  font-size: 32px;
+  /* display: inline-block; */
+  /* height: 10px; */
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.showMember:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
