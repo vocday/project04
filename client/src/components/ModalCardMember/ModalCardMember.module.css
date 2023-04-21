@@ -1,0 +1,29 @@
+.modalCardMemberContainer {
+  width: 264px !important;
+  background-color: #eeedf2;
+  height: 328px;
+  border-radius: 15px;
+  left: 400px;
+}
+.CardMemberAvatar {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.name {
+  margin: 0 auto;
+  width: fit-content;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+.joiningDay {
+  margin: 0 auto;
+  width: fit-content;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  white-space: nowrap;
+  font-family: "Roboto", sans-serif;
+}
