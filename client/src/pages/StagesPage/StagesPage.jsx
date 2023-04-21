@@ -1,20 +1,68 @@
-import { Breadcrumb, Button, ConfigProvider, Divider, Tabs } from "antd";
+import {
+  Breadcrumb,
+  Button,
+  ConfigProvider,
+  Form,
+  Input,
+  Modal,
+  Select,
+  Tabs,
+} from "antd";
 
-import classNames from "classnames/bind";
-import React from "react";
-import { Route, Routes, Outlet, useNavigate } from "react-router-dom";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classNames from "classnames/bind";
+import React, { useState } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Comment from "../../components/Comment/Comment";
 import Kanban from "../../components/Kanban/Kanban";
+import { Projectdetails } from "../../components/Projectdetails/Projectdetails";
 import MasterLayout from "../../layouts/MasterLayout/MasterLayout";
 import styles from "./StagesPage.module.scss";
-import { Projectdetails } from "../../components/Projectdetails/Projectdetails";
 
 const cx = classNames.bind(styles);
 
 const StagesPage = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const renderModal = [
+    {
+      label: "Tên trạng thái",
+      type: (
+        <Select
+          defaultValue="Tạm đình chỉ"
+          options={[
+            { label: "Chuẩn bị", value: "Chuẩn bị" },
+            { label: "Đang thực hiện", value: "Đang thực hiện" },
+            { label: "Tạm đình chỉ", value: "Tạm đình chỉ" },
+            { label: "Hoàn thành", value: "Hoàn thành" },
+          ]}
+        />
+      ),
+    },
+    {
+      label: "Ngày bắt đầu",
+      type: <Input type="Date" />,
+    },
+    {
+      label: "Ngày dự kiến kết thúc",
+      type: <Input type="Date" />,
+    },
+    {
+      label: "Ngày kết thúc thực tế",
+      type: <Input type="Date" />,
+    },
+  ];
+
+  const onAddStages = () => {
+    setIsOpen(true);
+  };
+
+  const onCancelStages = () => {
+    setIsOpen(false);
+  };
+
   const tabsItem = [
     {
       key: 1,
@@ -46,40 +94,31 @@ const StagesPage = () => {
             className={cx("name")}
             items={[
               {
-                title: (
-                  <span
-                    className={cx("hover")}
-                    onClick={() => {
-                      navigate("/");
-                    }}
-                  >
-                    Trang chủ
-                  </span>
-                ),
+                title: "Trang chủ",
               },
               {
                 title: (
-                  <span
-                    className={cx("hover")}
+                  <a
+                    href=""
                     onClick={() => {
                       navigate("/projectdetails");
                     }}
                   >
                     Dự án 1
-                  </span>
+                  </a>
                 ),
               },
               namePath !== "/projectdetails"
                 ? {
                     title: (
-                      <span
-                        className={cx("hover")}
+                      <a
+                        href=""
                         onClick={() => {
                           navigate("/projectdetails/detailedstage");
                         }}
                       >
                         Chi tiết trạng thái
-                      </span>
+                      </a>
                     ),
                   }
                 : " ",
@@ -93,10 +132,30 @@ const StagesPage = () => {
               type="primary"
               icon={<FontAwesomeIcon icon={faPlus} className={cx("icon1")} />}
               className={cx("btn--on")}
+              onClick={onAddStages}
             >
               Thêm trạng thái mới
             </Button>
           </ConfigProvider>
+
+          <Modal
+            open={isOpen}
+            onCancel={onCancelStages}
+            footer={[
+              <ConfigProvider
+                theme={{ token: { colorPrimary: "rgb(235, 118, 35)" } }}
+              >
+                <Button type="primary">Tạo mới thẻ</Button>
+              </ConfigProvider>,
+            ]}
+            centered
+          >
+            <Form layout="vertical">
+              {renderModal.map((item, index) => {
+                return <Form.Item label={item.label}>{item.type}</Form.Item>;
+              })}
+            </Form>
+          </Modal>
         </div>
         <Routes>
           <Route

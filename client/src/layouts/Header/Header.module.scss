@@ -41,3 +41,17 @@
 		display: none;
 	}
 }
+
+.notification {
+	min-width: 400px;
+	width: max-content;
+	display: flex;
+	flex-direction: column;
+	line-height: 40px;
+
+	.space {
+		padding: 15px 10px;
+		background-color: rgb(245, 245, 245);
+		margin-top: 5px;
+	}
+}

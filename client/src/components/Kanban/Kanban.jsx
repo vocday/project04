@@ -3,16 +3,14 @@ import { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { v4 as uuidv4 } from "uuid";
 
+import { PlusCircleTwoTone } from "@ant-design/icons";
 import { faClipboard } from "@fortawesome/free-regular-svg-icons";
-import {
-	faCalendarDays,
-	faFileSignature,
-	faPlus,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button, ConfigProvider, Divider, Modal, Tooltip } from "antd";
 import Card from "../CardItem/CardItem";
 import styles from "./Kanban.module.scss";
-import { Divider, Tooltip } from "antd";
+import FormCard from "../FormCard/FormCard";
 
 const cx = classNames.bind(styles);
 
@@ -24,7 +22,7 @@ const Kanban = () => {
 				<p>
 					Đang chuẩn bị{" "}
 					<Tooltip title="Thêm thẻ">
-						<FontAwesomeIcon icon={faPlus} className={cx("icon")} />
+						<PlusCircleTwoTone className={cx("icon")} onClick={hadleOpenCard} />
 					</Tooltip>
 				</p>
 			),
@@ -49,7 +47,7 @@ const Kanban = () => {
 				<p>
 					Đang thực hiện
 					<Tooltip title="Thêm thẻ">
-						<FontAwesomeIcon icon={faPlus} className={cx("icon")} />
+						<PlusCircleTwoTone className={cx("icon")} onClick={hadleOpenCard} />
 					</Tooltip>
 				</p>
 			),
@@ -70,7 +68,7 @@ const Kanban = () => {
 				<p>
 					Đang chờ đánh giá{" "}
 					<Tooltip title="Thêm thẻ">
-						<FontAwesomeIcon icon={faPlus} className={cx("icon")} />
+						<PlusCircleTwoTone className={cx("icon")} onClick={hadleOpenCard} />
 					</Tooltip>
 				</p>
 			),
@@ -87,7 +85,7 @@ const Kanban = () => {
 				<p>
 					Hoàn thành{" "}
 					<Tooltip title="Thêm thẻ">
-						<FontAwesomeIcon icon={faPlus} className={cx("icon")} />
+						<PlusCircleTwoTone className={cx("icon")} onClick={hadleOpenCard} />
 					</Tooltip>
 				</p>
 			),
@@ -104,7 +102,7 @@ const Kanban = () => {
 				<p>
 					Hủy bỏ{" "}
 					<Tooltip title="Thêm thẻ">
-						<FontAwesomeIcon icon={faPlus} className={cx("icon")} />
+						<PlusCircleTwoTone className={cx("icon")} onClick={hadleOpenCard} />
 					</Tooltip>
 				</p>
 			),
@@ -118,6 +116,15 @@ const Kanban = () => {
 	];
 
 	const [data, setData] = useState(mockData);
+	const [openModalCard, setOpenModalCard] = useState(false);
+
+	function hadleOpenCard() {
+		setOpenModalCard(true);
+	}
+
+	const onCancel = () => {
+		setOpenModalCard(false);
+	};
 
 	const onDragEnd = (result) => {
 		if (!result.destination) return;
@@ -166,6 +173,7 @@ const Kanban = () => {
 					<FontAwesomeIcon icon={faClipboard} /> Danh sách công việc
 				</p>
 				<Divider />
+
 				<DragDropContext onDragEnd={onDragEnd}>
 					<div className={cx("kanban")}>
 						{data.map((section) => (
@@ -209,6 +217,21 @@ const Kanban = () => {
 						))}
 					</div>
 				</DragDropContext>
+
+				<Modal
+					open={openModalCard}
+					onCancel={onCancel}
+					footer={[
+						<ConfigProvider
+							theme={{ token: { colorPrimary: "rgb(235, 118, 35)" } }}
+						>
+							<Button type="primary">Tạo mới thẻ</Button>
+						</ConfigProvider>,
+					]}
+					centered
+				>
+					<FormCard />
+				</Modal>
 			</div>
 		</>
 	);
