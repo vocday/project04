@@ -13,3 +13,15 @@
 	display: flex;
 	flex-direction: column;
 }
+
+.action--comment {
+	display: flex;
+	gap: 15px;
+	cursor: pointer;
+}
+
+.like {
+	display: flex;
+	color: #333;
+	gap: 5px;
+}

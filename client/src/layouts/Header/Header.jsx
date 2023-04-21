@@ -5,9 +5,11 @@ import {
 	Badge,
 	Button,
 	ConfigProvider,
+	Divider,
 	Image,
 	Input,
 	Layout,
+	Popover,
 	Space,
 	Tooltip,
 } from "antd";
@@ -17,11 +19,27 @@ import classNames from "classnames/bind";
 import notifications1 from "../../assets/image/notifications1.png";
 import question from "../../assets/image/question.png";
 import styles from "./Header.module.scss";
+import { useState } from "react";
 
 const cx = classNames.bind(styles);
 
 const HeaderLayout = () => {
 	const { Header } = Layout;
+	const content = (
+		<div className={cx("notification")}>
+			<h3>Thông báo</h3>
+			<Divider />
+			<Space className={cx("space")}>
+				<Avatar>D</Avatar>
+				<p>Dat đã đánh giá bài viết</p>
+			</Space>
+			<Space className={cx("space")}>
+				<Avatar>D</Avatar>
+				<p>Dat đã đánh giá bài viết</p>
+			</Space>
+		</div>
+	);
+
 	return (
 		<Header className={cx("wrapper")}>
 			<Input
@@ -35,7 +53,6 @@ const HeaderLayout = () => {
 					</Tooltip>
 				}
 				className={cx("input")}
-				// style={{ width: "300px" }}
 			/>
 
 			<Space size={15} className={cx("action")} align="center">
@@ -47,15 +64,8 @@ const HeaderLayout = () => {
 						icon={<FontAwesomeIcon icon={faPlus} className={cx("icon1")} />}
 						className={cx("btn--on")}
 					>
-						Tạo công việc mới
+						Tạo mới dự án
 					</Button>
-					<Tooltip title="Thêm công việc mới">
-						<Button
-							type="primary"
-							icon={<FontAwesomeIcon icon={faPlus} className={cx("icon1")} />}
-							className={cx("btn--off")}
-						></Button>
-					</Tooltip>
 				</ConfigProvider>
 
 				<Tooltip title="Câu hỏi thường gặp">
@@ -68,8 +78,8 @@ const HeaderLayout = () => {
 						className={cx("icon")}
 					/>
 				</Tooltip>
-				<Badge count={5}>
-					<Tooltip title="Thông báo">
+				<Popover content={content}>
+					<Badge count={2}>
 						<Image
 							preview={false}
 							width={"26px"}
@@ -78,8 +88,8 @@ const HeaderLayout = () => {
 							alt="image"
 							className={cx("icon")}
 						/>
-					</Tooltip>
-				</Badge>
+					</Badge>
+				</Popover>
 
 				<Avatar>Đ</Avatar>
 			</Space>
