@@ -19,7 +19,14 @@ export const ModalMemberList = ({
     setIsModalCardMemberOpen(false);
   };
   const [data, setData] = useState();
+  const [nameMember, setNameMember] = useState();
+  const [email, setEmail] = useState();
+  const [dayofparticipation, setDayofparticipation] = useState();
+
   useEffect(() => {
+    setNameMember("");
+    setEmail("");
+    setDayofparticipation("");
     setData([
       {
         key: "1",
@@ -41,13 +48,28 @@ export const ModalMemberList = ({
       },
     ]);
   }, []);
+  function setValueCardMember(name) {
+    const user = data.filter((item) => item.name === name);
+    setNameMember(user[0].name);
+    setEmail(user[0].email);
+    setDayofparticipation(user[0].dayofparticipation);
+  }
 
   const columns = [
     {
       title: "Tên",
       dataIndex: "name",
       key: "name",
-      render: (text) => <a onClick={() => showModalCardMember()}>{text}</a>,
+      render: (text) => (
+        <a
+          onClick={() => {
+            showModalCardMember();
+            setValueCardMember(text);
+          }}
+        >
+          {text}
+        </a>
+      ),
     },
     {
       title: "Email",
@@ -67,7 +89,7 @@ export const ModalMemberList = ({
         <a
           onClick={() => {
             setData(data.filter((item) => item.key != text.key));
-            console.log(text);
+            // console.log(text);
           }}
         >
           <DeleteOutlined />
@@ -92,6 +114,9 @@ export const ModalMemberList = ({
         >
           <Table columns={columns} dataSource={data} />
           <ModalCardMember
+            dayofparticipation={dayofparticipation}
+            name={nameMember}
+            email={email}
             isModalCardMemberOpen={isModalCardMemberOpen}
             handleOkCardMember={handleOkCardMember}
             handleCancelCardMember={handleCancelCardMember}
