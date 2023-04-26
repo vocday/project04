@@ -12,6 +12,7 @@ import {
   Popover,
   Space,
   Tooltip,
+  Modal,
 } from "antd";
 
 import classNames from "classnames/bind";
@@ -20,10 +21,21 @@ import notifications1 from "../../assets/image/notifications1.png";
 import question from "../../assets/image/question.png";
 import styles from "./Header.module.scss";
 import { useState } from "react";
+import { ModalAddProject } from "../../components/ModalAddProject/ModalAddProject";
 
 const cx = classNames.bind(styles);
 
 const HeaderLayout = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   const { Header } = Layout;
   const content = (
     <div className={cx("notification")}>
@@ -63,6 +75,7 @@ const HeaderLayout = () => {
             type="primary"
             icon={<FontAwesomeIcon icon={faPlus} className={cx("icon1")} />}
             className={cx("btn--on")}
+            onClick={showModal}
           >
             Tạo mới dự án
           </Button>
@@ -93,6 +106,24 @@ const HeaderLayout = () => {
 
         <Avatar>Đ</Avatar>
       </Space>
+      <Modal
+        // title="Tạo dự án mới"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={
+          [
+            // <Button key="back" onClick={handleCancel}>
+            //   Hủy
+            // </Button>,
+            // <Button key="submit" type="primary" onClick={handleOk}>
+            //   Thêm dự án
+            // </Button>,
+          ]
+        }
+      >
+        <ModalAddProject onOk={handleOk} onCancel={handleCancel} />
+      </Modal>
     </Header>
   );
 };

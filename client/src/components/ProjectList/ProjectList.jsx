@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Space, Table, Tag, Typography } from "antd";
 import styles from "./ProjectList.module.css";
+import { DataProcessing } from "../../context/dataProcessingcontext/dataProcessingcontext";
 
-export const ProjectList = ({ data }) => {
+export const ProjectList = ({ data, dataProcessing }) => {
+  const Datacontext = useContext(DataProcessing);
   const navigate = useNavigate();
   const { Title } = Typography;
   const columnsProcessing = [
@@ -23,15 +25,15 @@ export const ProjectList = ({ data }) => {
     },
     {
       title: "Ngày bắt đầu",
-      dataIndex: "start",
-      key: "start",
-      render: (text) => <p>20/3/2023</p>,
+      dataIndex: "startday",
+      key: "startday",
+      // render: (text) => <p>20/3/2023</p>,
     },
     {
       title: "Hạn hoàn thành",
-      dataIndex: "end",
-      key: "end",
-      render: (text) => <p>25/5/2023</p>,
+      dataIndex: "endday",
+      key: "endday",
+      // render: (text) => <p>25/5/2023</p>,
     },
     {
       title: "Trạng thái",
@@ -146,7 +148,7 @@ export const ProjectList = ({ data }) => {
         style={{ padding: "0 20px" }}
         pagination={{ pageSize: 5, defaultPageSize: 10 }}
         columns={columnsProcessing}
-        dataSource={data}
+        dataSource={Datacontext.dataProcessing}
       />
 
       <Title level={3} className={styles.titleLabel}>

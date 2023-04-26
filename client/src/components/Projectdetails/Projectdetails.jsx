@@ -73,7 +73,7 @@ export const Projectdetails = () => {
   const confirm = (e) => {
     console.log(e);
     message.success("Đã kết thúc dự án");
-    setTimeout(() => navigate("/"), 2000);
+    setTimeout(() => navigate("/"), 1500);
   };
   const cancel = (e) => {
     console.log(e);
@@ -108,18 +108,28 @@ export const Projectdetails = () => {
             <div className={styles.projectdetailLabel}>
               <b>Chủ dự án: </b>
               <div style={{ marginLeft: "20px", lineHeight: "35px" }}>
-                <Avatar size={30} style={{ backgroundColor: "#87d068" }}>
-                  Đạt
-                </Avatar>
+                <Avatar
+                  src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                  size={30}
+                  style={{ backgroundColor: "#87d068" }}
+                ></Avatar>
+                <span className={styles.projectdetailName}>
+                  Nguyễn Tiến Đạt
+                </span>
               </div>
             </div>
             <Divider />
             <div className={styles.projectdetailLabel}>
               <b>Quản lý dự án: </b>
               <div style={{ marginLeft: "20px", lineHeight: "35px" }}>
-                <Avatar size={30} style={{ backgroundColor: "blue" }}>
-                  Quý
-                </Avatar>
+                <Avatar
+                  src="https://xsgames.co/randomusers/avatar.php?g=pixel&key=3"
+                  size={30}
+                  style={{ backgroundColor: "blue" }}
+                ></Avatar>
+                <span className={styles.projectdetailName}>
+                  Nguyễn Tiến Quý
+                </span>
               </div>
             </div>
             <Divider />

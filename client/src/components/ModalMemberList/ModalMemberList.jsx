@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Modal, Space, Table, Tag, Input } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 import { ModalCardMember } from "../ModalCardMember/ModalCardMember";
@@ -18,6 +18,29 @@ export const ModalMemberList = ({
   const handleCancelCardMember = () => {
     setIsModalCardMemberOpen(false);
   };
+  const [data, setData] = useState();
+  useEffect(() => {
+    setData([
+      {
+        key: "1",
+        name: "John Brown",
+        email: "quy1@gmail.com",
+        dayofparticipation: "1/1/2022",
+      },
+      {
+        key: "2",
+        name: "Jim Green",
+        email: "quy2@gmail.com",
+        dayofparticipation: "2/3/2023",
+      },
+      {
+        key: "3",
+        name: "Joe Black",
+        email: "quy3@gmail.com",
+        dayofparticipation: "5/4/2022",
+      },
+    ]);
+  }, []);
 
   const columns = [
     {
@@ -39,35 +62,17 @@ export const ModalMemberList = ({
 
     {
       title: "",
-      key: "action",
+      key: "key",
       render: (text) => (
-        <a>
+        <a
+          onClick={() => {
+            setData(data.filter((item) => item.key != text.key));
+            console.log(text);
+          }}
+        >
           <DeleteOutlined />
         </a>
       ),
-    },
-  ];
-  const data = [
-    {
-      key: "1",
-      name: "John Brown",
-      email: "quy1@gmail.com",
-      dayofparticipation: "1/1/2022",
-      tags: ["nice", "developer"],
-    },
-    {
-      key: "2",
-      name: "Jim Green",
-      email: "quy2@gmail.com",
-      dayofparticipation: "2/3/2023",
-      tags: ["loser"],
-    },
-    {
-      key: "3",
-      name: "Joe Black",
-      email: "quy3@gmail.com",
-      dayofparticipation: "5/4/2022",
-      tags: ["cool", "teacher"],
     },
   ];
 
