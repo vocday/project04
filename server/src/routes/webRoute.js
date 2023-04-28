@@ -2,16 +2,19 @@ const express = require("express");
 const router = express.Router();
 
 const authController = require("../controllers/auth.controller");
-const homeController = require("../controllers/home.controller");
+// const homeController = require("../controllers/home.controller");
 
 const authMiddleware = require("../middleware/auth.mid");
-
 
 function route(app) {
   //auth
   router.post("/open-account", authController.openaccount);
   router.post("/login", authController.login);
-  router.post("/logout", authMiddleware.verifyAccessToken, authController.logout);
+  router.post(
+    "/logout",
+    authMiddleware.verifyAccessToken,
+    authController.logout
+  );
   router.post("/refresh-token", authController.refreshToken);
 
   //info & profile
@@ -28,8 +31,8 @@ function route(app) {
   //account
 
   //homepage
-  router.use("/", homeController.home);
-  router.use("/", authController.login);
+  // router.use("/", homeController.home);
+  // router.use("/", authController.login);
 
   return app.use("/", router);
 }
