@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Modal, Space, Table, Tag, Input } from "antd";
+import { Button, Modal, Space, Table, Tag, Input, Popconfirm } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 import { ModalCardMember } from "../ModalCardMember/ModalCardMember";
 export const ModalMemberList = ({
@@ -87,12 +87,24 @@ export const ModalMemberList = ({
       key: "key",
       render: (text) => (
         <a
-          onClick={() => {
-            setData(data.filter((item) => item.key != text.key));
-            // console.log(text);
-          }}
+        // onClick={() => {
+        //   setData(data.filter((item) => item.key != text.key));
+
+        // }}
         >
-          <DeleteOutlined />
+          <Popconfirm
+            title="Xóa thành viên ra khỏi dự án"
+            description="Bạn có muốn xóa thành viên này ra khỏi dự án không?"
+            onConfirm={() => {
+              setData(data.filter((item) => item.key != text.key));
+              // console.log(text);
+            }}
+            // onCancel={cancel}
+            okText="Xóa"
+            cancelText="Hủy"
+          >
+            <DeleteOutlined />
+          </Popconfirm>
         </a>
       ),
     },
